@@ -1,0 +1,24 @@
+<h2>Détail de la sortie</h2><br>
+
+<div class="row">
+    <div class="col-md-4 mr-auto">
+        <p> <span>Nom de la sortie :</span>{{ sortie.nom }}</p>
+        <p> <span>Date et heure de la sortie  :</span>{{ sortie.dateHeureDebut | date : 'EEEE dd MMMM yyyy à HH:mm' }}</p>
+        <p> <span>Date limite d'inscription :</span>{{ sortie.dateLimiteInscription |date : 'EEEE dd MMMM yyyy '}}</p>
+        <p> <span>Nombre de places :</span>{{ sortie.nbInscriptionMax }}</p>
+        <p> <span>Duree :</span>{{ sortie.duree }}</p>
+        <p> <span>Description et Infos :</span>{{ sortie.infoSortie }}</p>
+    </div>
+    <div class="col-md-4">
+        <p> <span>Campus :</span>{{ sortie.campus.nom }}</p>
+        <p> <span>Lieu :</span>{{ sortie.lieu.nom }}</p>
+        <p> <span>Rue :</span>{{ sortie.lieu.rue }}</p>
+        <p> <span>latitude :</span>{{ sortie.lieu.latitude }}</p>
+        <p> <span>Longitude :</span>{{ sortie.lieu.longitude }}</p>
+        <p> <span>Code Postal :</span>{{ sortie.lieu.ville.codePostal}}</p>
+
+    </div>
+
+</div>
+
+<a [routerLink]="['/accueil']">Retour</a>

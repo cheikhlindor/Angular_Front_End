@@ -65,11 +65,13 @@
         "serve": {
           "builder": "@angular-devkit/build-angular:dev-server",
           "options": {
-            "browserTarget": "Outing-httpclient:build"
+            "browserTarget": "Outing-httpclient:build",
+            "proxyConfig": "src/proxy.conf.json"
           },
           "configurations": {
             "production": {
-              "browserTarget": "Outing-httpclient:build:production"
+              "browserTarget": "Outing-httpclient:build:production",
+              "proxyConfig": "src/proxy.conf.json"
             }
           }
         },
@@ -124,5 +126,8 @@
       }
     }
   },
-  "defaultProject": "Outing-httpclient"
+  "defaultProject": "Outing-httpclient",
+  "cli": {
+    "analytics": false
+  }
 }

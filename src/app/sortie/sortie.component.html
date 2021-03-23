@@ -1,0 +1,116 @@
+
+<h1>Taper votre recherche ici</h1>
+  <div class="row">
+    <div class="col-sm-8 col-sm-offset-2">
+      <form (ngSubmit)="onSubmit()" #f="ngForm" [formGroup]="sortieForm">
+        <div class="form-group">
+          <label for="nom">le nom contient</label>
+          <input type="text" id="nom" class="form-control" name="nom" formControlName="nom">
+        </div>
+        <div class="form-group">
+          <label for="campus">Choisir un campus</label>
+          <select  id="campus" class="form-control" name="campus" formControlName="campus">
+            <option >allumé</option>
+            <option value="campus">campus</option>
+          </select>
+        </div>
+        <div class="form-group">
+          <label for="datedebut">Entre le :</label>
+          <input type="date" id="datedebut" class="form-control" name="datedebut"  formControlName="datedebut">
+        </div>
+        <div class="form-group">
+          <label for="datefin">Et le :</label>
+          <input type="date" id="datefin" class="form-control" name="datefin" formControlName="datefin">
+        </div>
+        <div class="form-check">
+          <label class="form-check-label">
+            <input class="form-check-input" type="checkbox" name="user" formControlName="user">
+            Sorties auxquelles je suis Inscrit/e
+          </label>
+        </div>
+        <div class="form-check disabled">
+          <label class="form-check-label">
+            <input class="form-check-input" type="checkbox" value="" disabled="">
+           Sorties dont je suis l'Organisateur/trice
+          </label>
+        </div>
+        <div class="form-check disabled">
+          <label class="form-check-label">
+            <input class="form-check-input" type="checkbox" value="" disabled="">
+           Sorties auwquelles je ne suis pas Inscrit/e
+          </label>
+        </div>
+        <div class="form-check disabled">
+          <label class="form-check-label">
+            <input class="form-check-input" type="checkbox" value="" disabled="">
+           Sorties passées
+          </label>
+        </div>
+        <button type="submit" class="btn btn-primary">Recherche</button>
+      </form>
+    </div>
+  </div>
+  <br>
+
+  <div class="row pb-4">
+  
+    <div class="col-12 col-sm-12 col-md-8 col-lg-8 col-xl-8">
+      <div class="row">
+        <div class="table-responsive httpclient-table blue-gradient">
+          <table class="table table-hover table-striped table-responsive-md">
+            <thead>
+              <tr>
+                <th scope="col">Nom de la sortie</th>
+                <th scope="col">Date de la sortie</th>
+                <th scope="col">Date limite d'inscription</th>
+                <th scope="col">Inscrits/Plcaes</th>
+                <th scope="col">Etat</th>
+                <th scope="col">Inscrit</th>
+                <th scope="col">Organisateur</th>
+                <th scope="col">Action</th>
+
+              </tr>
+            </thead>
+            <tbody>
+              <tr *ngFor="let sortie of sorties">
+                <td>{{sortie.nom}}</td>
+                <td>{{sortie.dateHeureDebut |date : 'EEEE dd MMMM yyyy à HH:mm'}}</td>
+                <td>{{sortie.dateLimiteInscription |date : 'EEEE dd MMMM yyyy à HH:mm'}}</td>
+                <td>{{sortie.nbInscriptionMax}}</td>
+                <td>{{sortie.etatsortie.libelle}}</td>
+                <td>  X</td>
+                <td>{{sortie.user.nom}}</td>
+                <td> <a [routerLink]="['/sortie-details', sortie.id]">Afficher</a></td>
+                             
+                </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+  </div>
+    <br>
+    <div class="col-12 col-sm-12 col-md-3 col-lg-3 col-xl-4">
+      <div class="row pb-4">
+        <div class="card" style="width: 18rem;">
+          <div class="card-body">
+            <hr>
+            <p class="card-text">Page d'ajout</p>
+            <div>
+         
+            <button (click)="add()" class="btn btn-primary">Ajouter une sortie</button>
+            
+            </div>
+    
+          </div>
+        </div>
+    
+      </div>
+    </div>
+  
+
+
+
+
+
+

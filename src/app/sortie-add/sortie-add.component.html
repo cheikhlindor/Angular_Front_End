@@ -1,0 +1,77 @@
+<h3>Ajouter une sortie</h3>
+
+<div class="col-sm-8 col-sm-offset62">
+    <form [formGroup]="sortieForm" (ngSubmit)="onSubmitForm()">
+        <div class="form-group">
+      <label for="nom">Nom de la sortie :</label>
+      <input type="text" class="form-control" id="nom" formControlName="nom">
+        </div>
+      <div class="form-group">
+        <label for="dateHeureDebut">Date de Début :</label>
+        <input type="date" class="form-control" id="nom" formControlName="dateHeureDebut">
+      </div>
+      <div class="form-group">
+        <label for="duree">Duree :</label>
+        <input type="number" class="form-control" id="duree" formControlName="duree">
+      </div>
+      <div class="form-group">
+        <label for="dateLimiteInscription">Date limite d'inscription :</label>
+        <input type="date" class="form-control" id="dateLimiteInscription" formControlName="dateLimiteInscription">
+      </div>
+           <div class="form-group">
+        <label for="nbInscriptionMax">Nombre de place :</label>
+        <input type="number" class="form-control" id="nbInscriptionMax" formControlName="nbInscriptionMax">
+      </div>
+      <div class="form-group">
+        <label for="infoSortie">Description-et- Infos :</label>
+        <input type="text" class="form-control" id="infoSortie" formControlName="infoSortie">
+      </div>
+      <div formGroupName="etatsortie">
+          <h3>Etat de la sortie</h3>
+      <div class="form-group">
+        <label for="libelle">Etat de la sortie :</label>
+        <input type="text" class="form-control" id="libelle" formControlName="libelle">
+      </div>
+    </div>
+    <div formGroupName="campus">
+        <h3>Campus</h3>
+      <div class="form-group">
+        <label for="nom">Campus :</label>
+        <input type="text" class="form-control" id="nom" formControlName="nom">
+      </div>
+    </div>
+    <div formGroupName="lieu">
+        <h3>Lieu</h3>
+        <div class="form-group">
+            <label for="nom">Lieu :</label>
+            <input type="text" class="form-control" id="nom" formControlName="nom">
+        </div>
+        <div class="form-group">
+            <label for="latitude">Latitude :</label>
+            <input type="number" class="form-control" id="latitude" formControlName="latitude">
+        </div>
+        <div class="form-group">
+            <label for="rue">Rue :</label>
+            <input type="text" class="form-control" id="rue" formControlName="rue">
+        </div>
+        <div class="form-group">
+            <label for="longitude">Longitude :</label>
+            <input type="number" class="form-control" id="longitude" formControlName="longitude">
+        </div>
+    
+    <div formGroupName="ville">
+        <h3>Ville</h3>
+        <div class="form-group">
+            <label for="nom">Nom :</label>
+            <input type="text" class="form-control" id="nom" formControlName="nom">
+        </div>
+        <div class="form-group">
+            <label for="codePostal">Code Postal :</label>
+            <input type="number" class="form-control" id="codePostal" formControlName="codePostal">
+        </div>
+    </div>
+  </div>
+      <button class="btn btn-primary" type="submit" [disabled]="sortieForm.invalid">Soumettre</button>
+    </form>
+  </div>
+  

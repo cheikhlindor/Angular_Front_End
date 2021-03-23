@@ -1,0 +1,40 @@
+<h3>Bienvenu dans la page d'inscription</h3>
+
+<div class="col-sm-8 col-sm-offset62">
+    <form [formGroup]="userForm" (ngSubmit)="onSubmitForm()">
+    <div class="form-group">
+      <label for="prenom">Prenom :</label>
+      <input type="text" class="form-control" id="prenom" formControlName="prenom">
+    </div>
+      <div class="form-group">
+        <label for="nom">Nom :</label>
+        <input type="text" class="form-control" id="nom" formControlName="nom">
+      </div>
+      <div class="form-group">
+        <label for="email">Email :</label>
+        <input type="text" class="form-control" id="email" formControlName="email">
+      </div>
+      <div class="form-group">
+        <label for="telephone">Telephone :</label>
+        <input type="number" class="form-control" id="telephone" formControlName="telephone">
+      </div>
+      <div class="form-group">
+        <label for="username">Pseudo :</label>
+        <input type="text" class="form-control" id="username" formControlName="username">
+      </div>
+      <div class="form-group">
+        <label for="campus">Campus :</label>
+        <input type="text" class="form-control" id="campus" formControlName="campus">
+      </div>
+      <div class="form-group">
+        <label for="password">Mot de passe :</label>
+        <input type="password" class="form-control" id="password" formControlName="password">
+      </div>
+      <div class="form-group">
+        <label for="con_password">Confirmer votre mot de passe :</label>
+        <input type="password" class="form-control" id="con_password" formControlName="con_password">
+      </div>
+      <button class="btn btn-primary" type="submit" [disabled]="userForm.invalid">Soumettre</button>
+    </form>
+  </div>
+  
